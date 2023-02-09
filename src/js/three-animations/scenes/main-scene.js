@@ -1,12 +1,17 @@
-import { Scene } from '../core';
-import { Cube } from '../entities/cube';
+import { PerspectiveCamera } from 'three';
+import { InteractiveScene } from '../core/scene-management';
+import { RotatingCube } from '../scene-objects/rotating-cube';
 
-export class MainScene extends Scene {
-  entities = {
-    Cube,
+export class MainScene extends InteractiveScene {
+  sceneObjects = {
+    RotatingCube,
   };
 
-  initialize() {
-    this.camera.position.z = 10;
+  cameras = {
+    Main: new PerspectiveCamera(75),
+  };
+
+  onSceneAwake() {
+    this.cameras.Main.position.z = 3;
   }
 }
