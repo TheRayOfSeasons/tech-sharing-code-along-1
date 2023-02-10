@@ -3,9 +3,10 @@ import { MonoBehaviour, SceneObject } from '../core/components';
 
 class MeshRenderer extends MonoBehaviour {
   start() {
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const geometry = new THREE.BoxGeometry(5, 5, 5);
     const material = new THREE.MeshNormalMaterial();
     this.mesh = new THREE.Mesh(geometry, material);
+    this.mesh.position.z = -13;
   }
 
   exportAsSceneObject() {
