@@ -5,6 +5,7 @@ class ControlManager extends MonoBehaviour {
   start() {
     this.controls = new OrbitControls(this.scene.currentCamera, this.scene.canvas);
     this.controls.enableDamping = true;
+    this.controls.enableZoom = false;
   }
 
   update() {
